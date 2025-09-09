@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/monokai.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/languages/go.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<style>
+	img { max-width:900px; }
+	.codeblock { 
+	background: #B0B0B0; padding:1px 10px 0px 10px; border-radius: 5px; overflow-x:auto; 
+	}
+	code {
+ font-family: monospace; font-size: inherit; color: #4f4f4a !important;
+	}
+	.inlineCode {
+ font-family: monospace; font-size: inherit; 
+	}
+</style>
+</head>
+<body style="background: #F0F0F0;">
+<div style="margin: 0 auto; width:1380px;  position: relative;" >
+<div style="width:1000px; padding:20px; margin:0px; z-index: 5; text-align:left; background-color: #DCDCDC; border-radius: 5px; position:absolute; top:0; left:340px;">
+<h1>X11</h1>
+<p>jag bytte till X11 ist för wayland som GUI-motor då Wayland var för tungt på min rpi 4 2GB. </p>
+<pre class="codeblock"><code style="tab-size: 4;" class="bash codeblock">bash
+sudo raspi-config
+- Advanced options
+  - Wayland
+    - X11
+
+#ta bort X11 screensaver:
+sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
+@xset s off
+@xset s noblank
+@xset -dpms
+
+
+#joutnalctl skriker om 
+#Failed to start rpi-connect-wayvnc.service - WayVNC process used by Raspberry Pi Connect
+#stoppa:
+systemctl --user stop rpi-connect-wayvnc.service
+#ta bort den:
+systemctl --user disable rpi-connect-wayvnc.service #notera --user
+
+</pre></code>
+</div>
+<div style="width:345px; padding-top: 20px;; position:absolute; top:0; left:0; overflow:auto;">
+	<iframe src="treeview.html" width="340px" frameBorder="0" height="900px"></iframe>
+</div>
+</div>
+</body>
+</html>
