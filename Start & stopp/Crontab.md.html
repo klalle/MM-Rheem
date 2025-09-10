@@ -25,6 +25,9 @@
 <div style="width:1000px; padding:20px; margin:0px; z-index: 5; text-align:left; background-color: #DCDCDC; border-radius: 5px; position:absolute; top:0; left:340px;">
 <h1>Crontab</h1>
 <pre class="codeblock"><code style="tab-size: 4;" class="bash codeblock">bash
+# öppna crontab 
+crontab -e
+
 # starta vid 06:00
 0 6 * * * /home/pi/startMagicMirror.sh live &gt;&gt; /home/pi/startMM.log 2&gt;&amp;1
 

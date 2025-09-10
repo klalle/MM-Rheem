@@ -1,4 +1,7 @@
 ```bash
+#öppna crontab 
+crontab -e
+
 # starta vid 06:00
 0 6 * * * /home/pi/startMagicMirror.sh live >> /home/pi/startMM.log 2>&1
 
