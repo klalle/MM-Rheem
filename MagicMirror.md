@@ -1,3 +1,5 @@
+Länk till [git-repot](https://github.com/klalle/MM-Rheem)
+
 ## [[ssh]]
 Skönt att slippa koppla in tangentbord i rpi för att göra ändringar, logga in från mac/win istället
 
